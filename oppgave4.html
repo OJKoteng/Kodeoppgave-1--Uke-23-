@@ -8,7 +8,35 @@
 </head>
 
 <body>
+    <section>
+        <h1>BMI-kalkulator 2.0!</h1>
+        <input type="text" name="vekt" id="vekt" required placeholder="Skriv vekt i kg">
+        <br><br>
+    </section>
 
+    <section>
+        <input type="text" name="høyde" id="høyde" required placeholder="Skriv høyde i meter">
+        <br><br>
+    </section>
+
+    <section>
+        <button onclick="generer()">Beregn BMI</button>
+        <br><br>
+        <div id="output"></div>
+    </section>
+
+    <script>
+
+        function generer() {
+
+            let vekt = document.getElementById("vekt").value;
+
+            let høyde = document.getElementById("høyde").value;
+
+            let output = document.getElementById("output");
+        }
+
+    </script>
 </body>
 
 </html>
