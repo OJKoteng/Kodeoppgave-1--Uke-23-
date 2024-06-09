@@ -34,6 +34,23 @@
             let høyde = document.getElementById("høyde").value;
 
             let output = document.getElementById("output");
+
+            let bmi = vekt / (høyde * høyde)
+
+            if (vekt == "" && høyde == "" || isNaN(vekt) && isNaN(høyde)) {
+                output = `Vennligst skriv inn gyldige verdier. Vekt i kg, høyde i meter, f eks 1.88. Ingen bokstaver og ingen tomme felt`;
+            } else if (bmi <= 18.5) {
+                output = `Din BMI er ${bmi.toFixed(2)}. Dette klassifiseres som lett undervekt.`;
+            } else if (bmi > 18.5 && bmi <= 24.9) {
+                output = `Din BMI er ${bmi.toFixed(2)}. Dette klassifiseres som normalvekt.`;
+            } else if (bmi > 25 && bmi <= 29.9) {
+                output = `Din BMI er ${bmi.toFixed(2)}. Dette klassifiseres som lettere overvekt.`;
+            } else if (bmi >= 30) {
+                output = `Din BMI er ${bmi.toFixed(2)}. Dette klassifiseres som fedme.`;
+            }
+
+
+            document.getElementById("output").innerHTML = output;
         }
 
     </script>
