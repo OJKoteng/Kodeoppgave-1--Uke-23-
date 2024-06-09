@@ -29,16 +29,16 @@
 
         function generer() {
 
-            let vekt = document.getElementById("vekt").value;
+            let vekt = document.getElementById("vekt").value.trim();
 
-            let høyde = document.getElementById("høyde").value;
+            let høyde = document.getElementById("høyde").value.trim();
 
             let output = document.getElementById("output");
 
             let bmi = vekt / (høyde * høyde)
 
-            if (vekt == "" && høyde == "" || isNaN(vekt) && isNaN(høyde)) {
-                output = `Vennligst skriv inn gyldige verdier. Vekt i kg, høyde i meter, f eks 1.88. Ingen bokstaver og ingen tomme felt`;
+            if (vekt === "" || høyde === "" || isNaN(vekt) || isNaN(høyde)) {
+                output = `Vennligst skriv inn gyldige verdier. Vekt i kg, høyde i meter, f eks 1.88. Ingen bokstaver og ingen tomme tekstfelt.`;
             } else if (bmi <= 18.5) {
                 output = `Din BMI er ${bmi.toFixed(2)}. Dette klassifiseres som lett undervekt.`;
             } else if (bmi > 18.5 && bmi <= 24.9) {
