@@ -26,12 +26,20 @@
 
             let output = document.getElementById("output");
 
-            switch (key) {
-                case value:
-
+            switch (tipping) {
+                case "U":
+                case "u":
+                    output = `Uavgjort`;
                     break;
 
-                default:
+                case "B":
+                case "b":
+                    output = `Borte`;
+                    break;
+
+                case "H":
+                case "h":
+                    output = `Hjemme`;
                     break;
             }
 
