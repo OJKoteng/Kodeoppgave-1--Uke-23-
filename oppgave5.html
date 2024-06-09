@@ -24,10 +24,76 @@
 
         function generer() {
 
-            let dato = document.getElementById("dato").value;
+            let dato = document.getElementById("dato").value.trim();
 
             let output = document.getElementById("output");
 
+            let dag = parseInt(dato.slice(0, 2));
+
+            let måned = parseInt(dato.slice(3))
+
+            if (dato === "" || isNaN(dato)) {
+                output = `Vennligst skriv inn gyldige verdier. Ingen tomme tekstfelt eller bokstaver.`
+
+            } else if (dag < 1 || dag > 31 || måned < 1 || måned > 12) {
+                output = `Vennligst skriv inn en gyldig dag (01-31) og måned (01-12).`;
+            }
+
+            let månednavn;
+
+            switch (måned) {
+                case 1:
+                    månednavn = "januar"
+                    break;
+
+                case 2:
+                    månednavn = "februar"
+                    break;
+
+                case 3:
+                    månednavn = "mars"
+                    break;
+
+                case 4:
+                    månednavn = "april"
+                    break;
+
+                case 5:
+                    månednavn = "mai"
+                    break;
+
+                case 6:
+                    månednavn = "juni"
+                    break;
+
+                case 7:
+                    månednavn = "juli"
+                    break;
+
+                case 8:
+                    månednavn = "august"
+                    break;
+
+                case 9:
+                    månednavn = "september"
+                    break;
+
+                case 10:
+                    månednavn = "oktober"
+                    break;
+
+                case 11:
+                    månednavn = "november"
+                    break;
+
+                case 12:
+                    månednavn = "desember"
+                    break;
+            }
+
+            output = `Du skrev inn ${dag}. ${månednavn}.`;
+
+            document.getElementById("output").innerHTML = output;
         }
 
     </script>
