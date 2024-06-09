@@ -8,7 +8,29 @@
 </head>
 
 <body>
+    <section>
+        <h1>Dato - Fra tall til tekstform!</h1>
+        <input type="text" name="dato" id="dato" required placeholder="Skriv dato i dd-mm format">
+        <br><br>
+    </section>
 
+    <section>
+        <button onclick="generer()">Beregn</button>
+        <br><br>
+        <div id="output"></div>
+    </section>
+
+    <script>
+
+        function generer() {
+
+            let dato = document.getElementById("dato").value;
+
+            let output = document.getElementById("output");
+
+        }
+
+    </script>
 </body>
 
 </html>
